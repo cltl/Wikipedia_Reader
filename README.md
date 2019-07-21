@@ -6,7 +6,7 @@ and convert them into JSON format (with both the text and the offsets of the hyp
 This is a wrapper around [Annotated-WikiExtractor](https://github.com/jodaiber/Annotated-WikiExtractor).
 
 ### Prerequisites
-Python 3.6 was used to create this project. It might work with older versions of Python.
+Python 2.7 was used to create this project. It might work with older versions of Python.
 
 #### Python modules
 
@@ -26,6 +26,7 @@ bash install.sh data_folder
 The script will also store GitHub repositories in the folder 'resources'.
 
 ## How to use
+
 
 ## TODO
     
