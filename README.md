@@ -7,7 +7,10 @@ This is a wrapper around [Annotated-WikiExtractor](https://github.com/jodaiber/A
 
 ### Prerequisites
 Python 2.7 was used to create this project. It might work with older versions of Python.
-
+It should be possible to call
+```python
+python2.7 some_file.py
+```
 #### Python modules
 
 A number of external modules need to be installed, which are listed in **requirements.txt**.
@@ -26,9 +29,12 @@ bash install.sh data_folder
 The script will also store GitHub repositories in the folder 'resources'.
 
 ## How to use
-
+```bash 
+bash convert_all.sh
+```
 
 ## TODO
+* index from Wikipedia page to -> file and line number
     
 ## Authors
 * **Marten Postma** (m.c.postma@vu.nl)
