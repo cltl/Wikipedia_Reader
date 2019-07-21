@@ -7,6 +7,7 @@ then
     echo "Usage:                  : $0 data_folder"
     echo
     echo "data_folder            : folder where dumps of Wikipedia will be stored (repositories will be stored in resources)"
+    echo "bash install.sh /mnt/scistor1/group/home/postma/wikipedia_dumps"
     exit -1;
 fi
 
