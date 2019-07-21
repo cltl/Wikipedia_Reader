@@ -31,10 +31,18 @@ The script will also store GitHub repositories in the folder 'resources'.
 ## How to use
 ```bash 
 bash convert_all.sh
+python create_index.py
 ```
+
+The end result is an index from the Wikipedia url -> 
+the path to file in which the output is found with the line number,
+See `how_to_use.py` for more information
 
 ## TODO
 * index from Wikipedia page to -> file and line number
+* in JSON output, the **url** key is always prefixed with "http://en.wikipedia.org/". 
+We should make this more general
+* it is possible to edit the number of workers (number of parallel processes)
     
 ## Authors
 * **Marten Postma** (m.c.postma@vu.nl)
