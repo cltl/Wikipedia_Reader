@@ -36,10 +36,12 @@ if __name__ == '__main__':
     print arguments[1:]
     input_folder = arguments[1]
     language = arguments[2]
+    number_of_wiki_pages = 0
     assert language in {'nl', 'it', 'en'}, '%s not part of supported languages: nl | it | en' % language
     output_path = os.path.join(input_folder, 'page2path.p')
+    stats_path = os.path.join(input_folder, 'stats.json')
 
-    matches = find_all_files(source_folder='/Users/marten/Downloads/wiki_nl',
+    matches = find_all_files(source_folder=input_folder,
                          suffix='bz2',
                          verbose=1)
 
@@ -50,6 +52,7 @@ if __name__ == '__main__':
     for match in matches:
         with bz2.BZ2File(match, "r") as infile:
             for index, line in enumerate(infile):
+                number_of_wiki_pages +=1
                 page_info = json.loads(line)
                 correct_url = page_info['url'].replace(old, new)
 
@@ -60,6 +63,14 @@ if __name__ == '__main__':
 
     print 'finished at %s' % datetime.now()
 
+    stats = {
+        'num_pages' : number_of_wiki_pages
+    }
+
     with open(output_path, 'wb') as outfile:
         pickle.dump(wiki_url2path_index, outfile)
         print 'written output to %s' % output_path
+
+    with open(stats_path, 'w') as outfile:
+        json.dump(stats, outfile)
+        print 'written stats to %s' % stats_path

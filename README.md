@@ -38,8 +38,12 @@ The end result is an index from the Wikipedia url ->
 the path to file in which the output is found with the line number,
 See `how_to_use.py` for more information
 
+## Debuggin
+the file **annotated_wikiextractor.py** contains the extraction script, but
+without multiprocessing. This helps in debuggin if there is an error.
+
 ## TODO
-* index from Wikipedia page to -> file and line number
+* stats about how many pages found
 * in JSON output, the **url** key is always prefixed with "http://en.wikipedia.org/". 
 We should make this more general
 * it is possible to edit the number of workers (number of parallel processes)
