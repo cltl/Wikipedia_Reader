@@ -29,9 +29,12 @@ bash install.sh data_folder
 The script will also store GitHub repositories in the folder 'resources'.
 
 ## How to use
+Please change:
+* **number_of_workers** in **resources/Annotated-WikiExtractor/annotated_wikiextractor/annotated_wikiextractor.py**.
+* **langage2info** in **merge_indices.py** to the correct crawling dates of which Wikipedia dumps you downloaded.
+
 ```bash 
 bash convert_all.sh
-python create_index.py
 ```
 
 The end result is an index from the Wikipedia url -> 
@@ -43,10 +46,8 @@ the file **annotated_wikiextractor.py** contains the extraction script, but
 without multiprocessing. This helps in debuggin if there is an error.
 
 ## TODO
-* stats about how many pages found
-* in JSON output, the **url** key is always prefixed with "http://en.wikipedia.org/". 
-We should make this more general
-* it is possible to edit the number of workers (number of parallel processes)
+* potentially keep/tag section titles
+* smaller pages are not excluded, find the option to include those
     
 ## Authors
 * **Marten Postma** (m.c.postma@vu.nl)

@@ -61,7 +61,6 @@ if __name__ == '__main__':
                 relative_path = '/'.join([rsplit_on_slash[-2], rsplit_on_slash[-1]])
                 wiki_url2path_index[correct_url] = (relative_path, index)
 
-    print 'finished at %s' % datetime.now()
 
     stats = {
         'num_pages' : number_of_wiki_pages
@@ -74,3 +73,6 @@ if __name__ == '__main__':
     with open(stats_path, 'w') as outfile:
         json.dump(stats, outfile)
         print 'written stats to %s' % stats_path
+
+
+    print 'finished at %s' % datetime.now()
