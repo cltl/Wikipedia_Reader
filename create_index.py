@@ -56,7 +56,10 @@ if __name__ == '__main__':
                 page_info = json.loads(line)
                 correct_url = page_info['url'].replace(old, new)
 
-                assert correct_url not in wiki_url2path_index, '%s already found before' % correct_url
+                if correct_url in wiki_url2path_index:
+                    print '%s already found before, will use first occurrence' % correct_url
+                    continue 
+
                 rsplit_on_slash = match.rsplit('/', 2)
                 relative_path = '/'.join([rsplit_on_slash[-2], rsplit_on_slash[-1]])
                 wiki_url2path_index[correct_url] = (relative_path, index)
