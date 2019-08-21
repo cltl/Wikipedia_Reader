@@ -10,7 +10,7 @@ then
     echo "output_folder         : folder where you want to store the extracted files"
     echo "language              : supported: nl en it"
     echo ""
-    echo "bash convert.sh /mnt/scistor1/group/home/postma/wikipedia_dumps/nlwiki-latest-pages-articles.xml.bz2 /home/postma/Wikipedia_Reader/wiki_nl nl"
+    echo "bash convert.sh /mnt/scistor1/group/home/postma/wikipedia_dumps/nlwiki-20190720-pages-articles.xml.bz2 /home/postma/Wikipedia_Reader/wiki/wiki_nl nl"
     exit -1;
 fi
 

@@ -29,8 +29,11 @@ bash install.sh data_folder
 The script will also store GitHub repositories in the folder 'resources'.
 
 ## How to use
-Please change:
-* **number_of_workers** in **resources/Annotated-WikiExtractor/annotated_wikiextractor/annotated_wikiextractor.py**.
+* Please change in file **resources/Annotated-WikiExtractor/annotated_wikiextractor/annotated_wikiextractor.py**:
+    * **number_of_workers** in **resources/Annotated-WikiExtractor/annotated_wikiextractor/annotated_wikiextractor.py**.
+* Please change in file **resources/Annotated-WikiExtractor/annotated_wikiextractor/wikiextractor.py**:
+    * line 340 (title = line[2:2]) to `title = line`)
+    * line 348 (title = line[2:-2]) to `title = line`)
 * **langage2info** in **merge_indices.py** to the correct crawling dates of which Wikipedia dumps you downloaded.
 
 ```bash 
@@ -41,12 +44,14 @@ The end result is an index from the Wikipedia url ->
 the path to file in which the output is found with the line number,
 See `how_to_use.py` for more information
 
-## Debuggin
+## Output
+In the resulting JSON files, the titles start and end with **++**. All sections titles start and end with **##**
+
+## Debugging
 the file **annotated_wikiextractor.py** contains the extraction script, but
 without multiprocessing. This helps in debuggin if there is an error.
 
 ## TODO
-* potentially keep/tag section titles
 * smaller pages are not excluded, find the option to include those
     
 ## Authors
